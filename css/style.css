@@ -1000,7 +1000,7 @@ nav a.active {
 .ticker-track {
   display: flex;
   gap: 56px;
-  animation: ticker 28s linear infinite;
+  animation: ticker 18s linear infinite;
   width: max-content;
 }
 
@@ -2342,7 +2342,8 @@ footer {
   display: flex;
   gap: 0;
   white-space: nowrap;
-  animation: ticker 28s linear infinite;
+  width: max-content;
+  animation: ticker 18s linear infinite;
 }
 
 .promo-ticker:hover .promo-track {
@@ -3064,6 +3065,8 @@ footer {
     border: 1px solid #e2e8f0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
+  .ticker-track,
+  .promo-track            { animation-duration: 12s; }
 }
 
 @media (max-width: 480px) {
@@ -3074,4 +3077,6 @@ footer {
   .slide-mockup-wrap      { padding: 10px; }
   .mockup                 { zoom: 0.41; }
   .problems-grid          { grid-template-columns: 1fr; }
+  .ticker-track,
+  .promo-track            { animation-duration: 19s; }
 }
