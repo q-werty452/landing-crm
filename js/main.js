@@ -1,7 +1,7 @@
-// El-crm Main JS
+// El-crm — главный скрипт
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── HEADER SCROLL ── */
+  /* ── СКРОЛЛ ШАПКИ ── */
   const header    = document.querySelector('header');
   const scrollTop = document.querySelector('.scroll-top');
   window.addEventListener('scroll', () => {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
   scrollTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* ── BURGER ── */
+  /* ── БУРГЕР-МЕНЮ ── */
   const burger    = document.querySelector('.burger');
   const mobileNav = document.querySelector('.mobile-nav');
   burger?.addEventListener('click', () => {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }));
 
-  /* ── LANGUAGE ── */
+  /* ── ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА ── */
   document.querySelectorAll('.lang-btn').forEach(btn =>
     btn.addEventListener('click', () => {
       document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
@@ -33,26 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   );
 
-  /* ── INTERSECTION OBSERVER ── */
+  /* ── НАБЛЮДАТЕЛЬ ПЕРЕСЕЧЕНИЙ (анимации при скролле) ── */
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.anim').forEach(el => io.observe(el));
 
-  /* ── CRM SLIDER ── */
+  /* ── CRM СЛАЙДЕР ── */
   makeSlider({
-    wrap:    '.crm-slider',
-    track:   '.crm-track',
-    prev:    '.crm-prev',
-    next:    '.crm-next',
-    dots:    '.s-dot',
-    auto:    5000,
+    wrap:  '.crm-slider',
+    track: '.crm-track',
+    prev:  '.crm-prev',
+    next:  '.crm-next',
+    dots:  '.s-dot',
+    auto:  5000,
   });
 
-  /* ── REVIEWS SLIDER ── */
+  /* ── СЛАЙДЕР ОТЗЫВОВ ── */
   makeReviews();
 
-  /* ── FAQ ── */
+  /* ── АККОРДЕОН FAQ ── */
   document.querySelectorAll('.faq-q').forEach(q =>
     q.addEventListener('click', () => {
       const item   = q.closest('.faq-item');
@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   );
 
-  /* ── PRICING TOGGLE ── */
-  const togSwitch  = document.querySelector('.tog-switch');
-  const togBadge   = document.querySelector('.tog-badge');
-  const lblMonth   = document.querySelector('.tog-month');
-  const lblYear    = document.querySelector('.tog-year');
+  /* ── ПЕРЕКЛЮЧАТЕЛЬ ТАРИФОВ (месяц / год) ── */
+  const togSwitch = document.querySelector('.tog-switch');
+  const togBadge  = document.querySelector('.tog-badge');
+  const lblMonth  = document.querySelector('.tog-month');
+  const lblYear   = document.querySelector('.tog-year');
   if (togSwitch) {
     let yearly = false;
     togSwitch.addEventListener('click', () => {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lblMonth?.classList.add('active');
   }
 
-  /* ── NEWS FILTERS ── */
+  /* ── ФИЛЬТРЫ НОВОСТЕЙ ── */
   document.querySelectorAll('.ftag').forEach(tag =>
     tag.addEventListener('click', () => {
       document.querySelectorAll('.ftag').forEach(t => t.classList.remove('active'));
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   );
 
-  /* ── NEWS SEARCH ── */
+  /* ── ПОИСК ПО НОВОСТЯМ ── */
   const searchInput = document.querySelector('.search-input');
   if (searchInput) {
     searchInput.addEventListener('input', () => {
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── NEWS MODAL ── */
+  /* ── МОДАЛЬНОЕ ОКНО НОВОСТЕЙ ── */
   const overlay    = document.querySelector('.modal-overlay');
   const modalClose = document.querySelector('.modal-close');
   const modalTitle = document.querySelector('.modal-article-title');
@@ -139,7 +139,50 @@ document.addEventListener('DOMContentLoaded', () => {
   overlay?.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  /* ── FORMS ── */
+  /* ── ФИЛЬТРЫ ВОЗМОЖНОСТЕЙ ── */
+  const featFilters = document.querySelectorAll('.feat-filter');
+  const featCards   = document.querySelectorAll('.feat-card');
+  if (featFilters.length && featCards.length) {
+    const grid = document.querySelector('.features-grid');
+    featFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        featFilters.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.cat;
+        featCards.forEach(card => {
+          if (cat === 'all' || card.dataset.cat === cat) {
+            card.classList.remove('hidden');
+            card.style.position = '';
+          } else {
+            card.classList.add('hidden');
+            card.style.position = 'absolute';
+          }
+        });
+        if (grid) {
+          grid.style.minHeight = '';
+        }
+      });
+    });
+  }
+
+  /* ── ВОРОНКА РЕШЕНИЙ ── */
+  const funnelSteps    = document.querySelectorAll('.funnel-step');
+  const solutionSlides = document.querySelectorAll('.solution-slide');
+  if (funnelSteps.length && solutionSlides.length) {
+    funnelSteps.forEach((step, i) => {
+      step.addEventListener('click', () => {
+        funnelSteps.forEach(s => s.classList.remove('fs-active'));
+        solutionSlides.forEach(s => s.classList.remove('active'));
+        step.classList.add('fs-active');
+        if (solutionSlides[i]) solutionSlides[i].classList.add('active');
+      });
+    });
+    // активируем первый шаг по умолчанию
+    funnelSteps[0]?.classList.add('fs-active');
+    solutionSlides[0]?.classList.add('active');
+  }
+
+  /* ── ОТПРАВКА ФОРМ ── */
   document.querySelectorAll('form').forEach(form => {
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -152,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.textContent = orig;
         btn.style.background = '';
         form.reset();
-        // reset floating labels
+        // сброс плавающих меток
         form.querySelectorAll('.float-group input, .float-group textarea').forEach(inp => {
           inp.dispatchEvent(new Event('input'));
         });
@@ -160,16 +203,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── ACTIVE NAV ── */
+  /* ── АКТИВНАЯ ССЫЛКА В НАВИГАЦИИ ── */
   const page = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('nav a, .mobile-nav a').forEach(a => {
     const href = a.getAttribute('href') || '';
     if (href === page || (page === '' && href === 'index.html')) a.classList.add('active');
   });
 
-}); // end DOMContentLoaded
+}); // конец DOMContentLoaded
 
-/* ── GENERIC SLIDER ── */
+/* ── УНИВЕРСАЛЬНЫЙ СЛАЙДЕР ── */
 function makeSlider({ wrap, track, prev, next, dots, auto }) {
   const w = document.querySelector(wrap);
   if (!w) return;
@@ -197,7 +240,7 @@ function makeSlider({ wrap, track, prev, next, dots, auto }) {
   w.addEventListener('mouseenter', () => { clearInterval(timer); timer = null; });
   w.addEventListener('mouseleave', () => { if (auto) timer = setInterval(() => go(cur + 1), auto); });
 
-  // Touch swipe
+  // свайп на тач-устройствах
   let sx = 0;
   tr.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
   tr.addEventListener('touchend',   e => {
@@ -208,9 +251,9 @@ function makeSlider({ wrap, track, prev, next, dots, auto }) {
   go(0);
 }
 
-/* ── REVIEWS SLIDER ── */
+/* ── СЛАЙДЕР ОТЗЫВОВ ── */
 function makeReviews() {
-  const tr  = document.querySelector('.reviews-track');
+  const tr = document.querySelector('.reviews-track');
   if (!tr) return;
   const cards = [...tr.querySelectorAll('.review-card')];
   if (!cards.length) return;
