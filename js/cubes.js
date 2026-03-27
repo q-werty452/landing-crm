@@ -36,12 +36,27 @@
   // Адаптивный выбор набора конфигов
   let CONFIGS;
   if (isMobile) {
-    // 4 куба: маленькие, очень полупрозрачные, по углам экрана
     CONFIGS = [
-      { size: 42, x: 8,  y: 10, speed: 38, rotX: 20,  rotY: 45,  depth: .2, color: 'c-emerald' },
-      { size: 36, x: 78, y: 6,  speed: 44, rotX: 60,  rotY: 10,  depth: .2, color: 'c-teal'    },
-      { size: 40, x: 82, y: 68, speed: 40, rotX: 110, rotY: 40,  depth: .2, color: 'c-mint'    },
-      { size: 34, x: 4,  y: 72, speed: 48, rotX: 70,  rotY: 170, depth: .2, color: 'c-sage'    },
+      { size: 70,  x: 5,  y: 3,  speed: 36, rotX: 20,  rotY: 45,  depth: .7, color: 'c-emerald' },
+      { size: 55,  x: 70, y: 2,  speed: 42, rotX: 60,  rotY: 10,  depth: .7, color: 'c-teal'    },
+      { size: 48,  x: 85, y: 12, speed: 30, rotX: 110, rotY: 220, depth: .7, color: 'c-mint'    },
+      { size: 65,  x: 2,  y: 18, speed: 44, rotX: 70,  rotY: 170, depth: .7, color: 'c-sage'    },
+      { size: 52,  x: 45, y: 10, speed: 38, rotX: 180, rotY: 90,  depth: .7, color: 'c-lime'    },
+      { size: 42,  x: 25, y: 28, speed: 34, rotX: 260, rotY: 140, depth: .7, color: 'c-emerald' },
+      { size: 60,  x: 78, y: 32, speed: 32, rotX: 300, rotY: 60,  depth: .7, color: 'c-teal'    },
+      { size: 44,  x: 8,  y: 42, speed: 46, rotX: 45,  rotY: 280, depth: .7, color: 'c-mint'    },
+      { size: 58,  x: 60, y: 46, speed: 28, rotX: 130, rotY: 150, depth: .7, color: 'c-sage'    },
+      { size: 72,  x: 35, y: 52, speed: 36, rotX: 200, rotY: 320, depth: .7, color: 'c-lime'    },
+      { size: 50,  x: 82, y: 58, speed: 40, rotX: 220, rotY: 310, depth: .7, color: 'c-emerald' },
+      { size: 46,  x: 15, y: 64, speed: 34, rotX: 80,  rotY: 200, depth: .7, color: 'c-teal'    },
+      { size: 62,  x: 55, y: 68, speed: 30, rotX: 160, rotY: 30,  depth: .7, color: 'c-mint'    },
+      { size: 38,  x: 5,  y: 76, speed: 44, rotX: 240, rotY: 120, depth: .7, color: 'c-sage'    },
+      { size: 54,  x: 72, y: 78, speed: 38, rotX: 50,  rotY: 260, depth: .7, color: 'c-lime'    },
+      { size: 40,  x: 88, y: 84, speed: 32, rotX: 320, rotY: 80,  depth: .7, color: 'c-emerald' },
+      { size: 66,  x: 30, y: 82, speed: 36, rotX: 100, rotY: 340, depth: .7, color: 'c-teal'    },
+      { size: 44,  x: 50, y: 88, speed: 42, rotX: 170, rotY: 190, depth: .7, color: 'c-mint'    },
+      { size: 56,  x: 18, y: 92, speed: 30, rotX: 290, rotY: 70,  depth: .7, color: 'c-sage'    },
+      { size: 48,  x: 65, y: 94, speed: 38, rotX: 40,  rotY: 230, depth: .7, color: 'c-lime'    },
     ];
   } else if (isTablet) {
     // 9 кубов — каждый второй из полного набора, размер -20%
@@ -57,9 +72,8 @@
     const el = document.createElement('div');
     el.className = 'cube' + (cfg.color ? ' ' + cfg.color : '');
 
-    // Прозрачность: на мобиле — едва заметные акценты
     const opacity = isMobile
-      ? 0.07 + cfg.depth * 0.06
+      ? 0.55
       : 0.28 + cfg.depth * 0.52;
 
     el.style.cssText =
@@ -86,7 +100,7 @@
       el,
       ...cfg,
       floatOff:   Math.random() * Math.PI * 2,
-      floatSpeed: isMobile ? 0.15 + Math.random() * 0.15 : 0.3 + Math.random() * 0.35,
+      floatSpeed: 0.3 + Math.random() * 0.35,
     };
   });
 
@@ -95,10 +109,7 @@
   let tMouseX = 0, tMouseY = 0;
   let t0      = null;
 
-  // Скролл-параллакс только для планшета и десктопа
-  if (!isMobile) {
-    window.addEventListener('scroll', () => { scrollY = window.scrollY; }, { passive: true });
-  }
+  window.addEventListener('scroll', () => { scrollY = window.scrollY; }, { passive: true });
 
   // Реакция на курсор только для десктопа
   if (isDesktop) {
@@ -118,16 +129,17 @@
     }
 
     cubes.forEach(c => {
-      const floatAmp = isMobile ? 6 : 18;
+      const floatAmp = 18;
       const floatY   = Math.sin(elapsed * c.floatSpeed + c.floatOff) * floatAmp;
 
       if (isMobile) {
-        // Автономное плавание + медленное вращение, translate3d для GPU
-        const rotMult = 0.4;
+        const parScrollY = scrollY * 0.05 * (1 - c.depth * 0.8);
+        const rotMult = 0.8 + c.depth * 0.5;
         const rX = c.rotX + elapsed * (180 / c.speed) * rotMult;
         const rY = c.rotY + elapsed * (180 / (c.speed * 1.3)) * rotMult;
+        const rZ = elapsed * (25 / c.speed) * rotMult;
         c.el.style.transform =
-          `translate3d(0px,${floatY}px,0px) rotateX(${rX}deg) rotateY(${rY}deg)`;
+          `translate3d(0px,${floatY + parScrollY}px,0px) rotateX(${rX}deg) rotateY(${rY}deg) rotateZ(${rZ}deg)`;
       } else {
         const parScrollY = scrollY * 0.05 * (1 - c.depth * 0.8);
         const cursorStr  = isDesktop ? (0.5 + c.depth * 1.5) : 0;
