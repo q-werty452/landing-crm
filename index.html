@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El-crm — CRM для вашего бизнеса</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 3D CUBES BG -->
+<div id="cubes-bg"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+      </span>
+      El-crm
+    </a>
+    <nav>
+      <a href="index.html" class="active">Главная</a>
+      <a href="pricing.html">Тарифы</a>
+      <a href="news.html">Новости</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher">
+        <button class="lang-btn active">RU</button>
+        <button class="lang-btn">EN</button>
+      </div>
+      <a href="#lead" class="btn btn-primary" style="padding:10px 22px;font-size:.88rem">Войти / Регистрация</a>
+    </div>
+    <button class="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav">
+  <a href="index.html">Главная</a>
+  <a href="pricing.html">Тарифы</a>
+  <a href="news.html">Новости</a>
+  <a href="contacts.html">Контакты</a>
+  <a href="#lead" class="btn btn-primary">Войти / Регистрация</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Новый уровень управления продажами
+      </div>
+      <h1>CRM которая <em>растёт</em><br>вместе с вашим<br>бизнесом</h1>
+      <p class="hero-desc">El-crm — умная CRM-система для автоматизации продаж, управления клиентами и роста выручки. Простой старт, безграничные возможности.</p>
+      <div class="hero-actions">
+        <a href="#lead" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Попробовать бесплатно
+        </a>
+        <a href="pricing.html" class="btn btn-outline">Посмотреть тарифы</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>3 500+</strong><span>активных компаний</span></div>
+        <div class="hero-stat"><strong>98%</strong><span>удовлетворённость</span></div>
+        <div class="hero-stat"><strong>14 дней</strong><span>бесплатный период</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRM SLIDER -->
+<section class="crm-slider-section section-pad">
+  <div class="container">
+    <div class="section-center anim">
+      <span class="section-label">Интерфейс системы</span>
+      <h2 class="section-title">Что такое El-crm?</h2>
+      <p class="section-sub">Мощный инструмент для управления сделками, клиентами и командой — в одном красивом интерфейсе</p>
+    </div>
+    <div class="crm-slider anim d1">
+      <div class="crm-track">
+
+        <!-- Slide 1: Dashboard -->
+        <div class="slide">
+          <div class="slide-mockup-wrap">
+            <div class="mockup">
+              <div class="mockup-titlebar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="mockup-name">El-crm — Дашборд</span>
+              </div>
+              <div class="mockup-body">
+                <div class="mockup-row">
+                  <div class="stat-card"><div class="stat-label">Выручка (месяц)</div><div class="stat-val">₽ 2,4М</div><div class="stat-bar"><div class="stat-fill" style="width:72%"></div></div></div>
+                  <div class="stat-card"><div class="stat-label">Новых клиентов</div><div class="stat-val">148</div><div class="stat-bar"><div class="stat-fill" style="width:58%"></div></div></div>
+                  <div class="stat-card"><div class="stat-label">Сделок в работе</div><div class="stat-val">67</div><div class="stat-bar"><div class="stat-fill" style="width:45%"></div></div></div>
+                  <div class="stat-card"><div class="stat-label">Конверсия</div><div class="stat-val">24%</div><div class="stat-bar"><div class="stat-fill" style="width:24%"></div></div></div>
+                </div>
+                <div class="mockup-row" style="margin-top:8px">
+                  <div style="flex:2;background:#f8fffe;border:1px solid rgba(78,159,125,.1);border-radius:10px;padding:14px">
+                    <div class="stat-label" style="margin-bottom:10px">Активность команды</div>
+                    <div style="display:flex;gap:4px;align-items:flex-end;height:60px">
+                      <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:45%;opacity:.5"></div>
+                      <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:70%"></div>
+                      <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:55%;opacity:.7"></div>
+                      <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:90%"></div>
+                      <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:65%;opacity:.8"></div>
+                      <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:80%"></div>
+                      <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:50%;opacity:.6"></div>
+                    </div>
+                  </div>
+                  <div style="flex:1;background:#f8fffe;border:1px solid rgba(78,159,125,.1);border-radius:10px;padding:14px">
+                    <div class="stat-label" style="margin-bottom:10px">Задачи сегодня</div>
+                    <div style="font-size:.82rem;color:#555;margin-bottom:6px">✓ Позвонить клиентам (5)</div>
+                    <div style="font-size:.82rem;color:#555;margin-bottom:6px">✓ Выслать КП (3)</div>
+                    <div style="font-size:.82rem;color:var(--accent);margin-bottom:6px">● Встреча в 14:00</div>
+                    <div style="font-size:.82rem;color:#aaa">○ Отчёт по итогам</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Pipeline -->
+        <div class="slide">
+          <div class="slide-mockup-wrap">
+            <div class="mockup">
+              <div class="mockup-titlebar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="mockup-name">El-crm — Воронка продаж</span>
+              </div>
+              <div class="mockup-body">
+                <div class="mockup-pipeline">
+                  <div class="pipe-col">
+                    <div class="pipe-col-title">Новые (12)</div>
+                    <div class="pipe-card">ООО «Строй Групп»<span>₽ 180 000</span></div>
+                    <div class="pipe-card">ИП Алексеев<span>₽ 45 000</span></div>
+                    <div class="pipe-card">АО «Медиа Плюс»<span>₽ 230 000</span></div>
+                  </div>
+                  <div class="pipe-col">
+                    <div class="pipe-col-title">Переговоры (8)</div>
+                    <div class="pipe-card">ООО «ТехноПрокат»<span>₽ 420 000</span></div>
+                    <div class="pipe-card">ООО «Риэлт Про»<span>₽ 95 000</span></div>
+                    <div class="pipe-card">АО «Транс Сервис»<span>₽ 660 000</span></div>
+                  </div>
+                  <div class="pipe-col">
+                    <div class="pipe-col-title">КП отправлено (5)</div>
+                    <div class="pipe-card">ООО «ФинТрейд»<span>₽ 1 200 000</span></div>
+                    <div class="pipe-card">ИП Петрова С.М.<span>₽ 78 000</span></div>
+                  </div>
+                  <div class="pipe-col">
+                    <div class="pipe-col-title">Закрыты (23)</div>
+                    <div class="pipe-card" style="border-left:3px solid var(--accent)">ООО «Альфа»<span>₽ 850 000</span></div>
+                    <div class="pipe-card" style="border-left:3px solid var(--accent)">АО «Бета Групп»<span>₽ 340 000</span></div>
+                    <div class="pipe-card" style="border-left:3px solid var(--accent)">ООО «Гамма»<span>₽ 190 000</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Contacts -->
+        <div class="slide">
+          <div class="slide-mockup-wrap">
+            <div class="mockup">
+              <div class="mockup-titlebar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="mockup-name">El-crm — База клиентов</span>
+              </div>
+              <div class="mockup-body">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                  <div style="font-size:.85rem;font-weight:600;color:var(--text)">Все клиенты · 3 248</div>
+                  <div style="background:var(--accent);color:#fff;padding:6px 14px;border-radius:20px;font-size:.78rem;font-weight:600">+ Добавить</div>
+                </div>
+                <table class="mockup-table">
+                  <thead><tr><th>Компания</th><th>Контакт</th><th>Сделок</th><th>Статус</th></tr></thead>
+                  <tbody>
+                    <tr><td>ООО «Строй Групп»</td><td>Иванов А.П.</td><td>4</td><td><span class="badge-green">Активный</span></td></tr>
+                    <tr><td>АО «Медиа Плюс»</td><td>Смирнова К.В.</td><td>2</td><td><span class="badge-green">Активный</span></td></tr>
+                    <tr><td>ИП Алексеев Д.Р.</td><td>Алексеев Д.</td><td>1</td><td><span class="badge-orange">Новый</span></td></tr>
+                    <tr><td>ООО «ТехноПрокат»</td><td>Попов М.И.</td><td>7</td><td><span class="badge-green">Активный</span></td></tr>
+                    <tr><td>АО «Транс Сервис»</td><td>Козлова Е.В.</td><td>3</td><td><span class="badge-green">Активный</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /crm-track -->
+      <div class="slider-controls">
+        <button class="slider-btn crm-prev" aria-label="Назад">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="slider-dots">
+          <span class="s-dot active"></span>
+          <span class="s-dot"></span>
+          <span class="s-dot"></span>
+        </div>
+        <button class="slider-btn crm-next" aria-label="Вперёд">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div><!-- /crm-slider -->
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section section-pad">
+  <div class="container">
+    <div class="section-center anim">
+      <span class="section-label">Возможности</span>
+      <h2 class="section-title">Всё что нужно для роста продаж</h2>
+      <p class="section-sub">Мощные инструменты, которые работают вместе и помогают вашей команде продавать больше</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card anim d1">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Управление клиентами</h3>
+        <p>Единая база контактов с полной историей взаимодействий, сегментацией и тегами. Никогда не теряйте важную информацию о клиенте.</p>
+      </div>
+      <div class="feat-card anim d2">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3>Воронка продаж</h3>
+        <p>Визуальный Kanban-борд для управления сделками. Перетаскивайте карточки, отслеживайте прогресс и прогнозируйте выручку.</p>
+      </div>
+      <div class="feat-card anim d3">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Аналитика и отчёты</h3>
+        <p>Интерактивные дашборды с ключевыми метриками. Понимайте что работает и принимайте решения на основе данных.</p>
+      </div>
+      <div class="feat-card anim d1">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3>Задачи и события</h3>
+        <p>Встроенный планировщик с напоминаниями. Все задачи, звонки и встречи привязаны к сделкам и клиентам.</p>
+      </div>
+      <div class="feat-card anim d2">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3>Email и мессенджеры</h3>
+        <p>Отправляйте письма прямо из CRM. Интеграция с Telegram, WhatsApp и корпоративной почтой в один клик.</p>
+      </div>
+      <div class="feat-card anim d3">
+        <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Безопасность данных</h3>
+        <p>Шифрование данных, ролевой доступ и детальные логи активности. Ваши данные надёжно защищены на серверах в России.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="for-whom-section section-pad">
+  <div class="container">
+    <div class="section-center anim">
+      <span class="section-label">Для кого</span>
+      <h2 class="section-title">El-crm подходит для любого бизнеса</h2>
+      <p class="section-sub">Гибкая система, которая масштабируется вместе с вами — от стартапа до корпорации</p>
+    </div>
+    <div class="for-whom-grid">
+      <div class="glass-card anim d1">
+        <div class="glass-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <h3>Малый бизнес</h3>
+        <p>Быстрый старт без IT-отдела. Настройте CRM за 1 час и начните работать сразу.</p>
+        <ul class="glass-list">
+          <li>До 10 пользователей</li>
+          <li>Готовые шаблоны воронок</li>
+          <li>Быстрая интеграция с сайтом</li>
+          <li>Мобильное приложение</li>
+        </ul>
+      </div>
+      <div class="glass-card anim d2">
+        <div class="glass-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Средний бизнес</h3>
+        <p>Расширенная аналитика, управление командой и автоматизация рутины для роста без найма.</p>
+        <ul class="glass-list">
+          <li>До 100 пользователей</li>
+          <li>Расширенная аналитика</li>
+          <li>Автоматизация задач</li>
+          <li>Интеграции с 1С и ERP</li>
+        </ul>
+      </div>
+      <div class="glass-card anim d3">
+        <div class="glass-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <h3>Крупный бизнес</h3>
+        <p>Enterprise-решение с выделенным сервером, кастомными интеграциями и SLA 99.9%.</p>
+        <ul class="glass-list">
+          <li>Неограниченные пользователи</li>
+          <li>Выделенный сервер</li>
+          <li>Кастомные поля и модули</li>
+          <li>Персональный менеджер</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS TICKER -->
+<section class="ticker-section">
+  <div class="container">
+    <div class="section-center anim" style="margin-bottom:40px">
+      <span class="section-label">Партнёры</span>
+      <h2 class="section-title">Нам доверяют лидеры рынка</h2>
+    </div>
+  </div>
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="partner">СБЕР БИЗНЕС</span>
+      <span class="partner">РОСТЕЛЕКОМ</span>
+      <span class="partner">МЕГАФОН</span>
+      <span class="partner">ЯНДЕКС.БИЗНЕС</span>
+      <span class="partner">VK БИЗНЕС</span>
+      <span class="partner">ТИНЬКОФФ</span>
+      <span class="partner">MAIL.RU GROUP</span>
+      <span class="partner">БИЛАЙН</span>
+      <span class="partner">МТС ЛИНК</span>
+      <span class="partner">2ГИС</span>
+      <span class="partner">АВИТО БИЗНЕС</span>
+      <span class="partner">ОЗО́Н SELLER</span>
+      <!-- duplicate for seamless loop -->
+      <span class="partner">СБЕР БИЗНЕС</span>
+      <span class="partner">РОСТЕЛЕКОМ</span>
+      <span class="partner">МЕГАФОН</span>
+      <span class="partner">ЯНДЕКС.БИЗНЕС</span>
+      <span class="partner">VK БИЗНЕС</span>
+      <span class="partner">ТИНЬКОФФ</span>
+      <span class="partner">MAIL.RU GROUP</span>
+      <span class="partner">БИЛАЙН</span>
+      <span class="partner">МТС ЛИНК</span>
+      <span class="partner">2ГИС</span>
+      <span class="partner">АВИТО БИЗНЕС</span>
+      <span class="partner">ОЗО́Н SELLER</span>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section section-pad">
+  <div class="container">
+    <div class="section-center anim">
+      <span class="section-label">Отзывы</span>
+      <h2 class="section-title">Что говорят наши клиенты</h2>
+      <p class="section-sub">Реальные истории роста от компаний, которые уже используют El-crm</p>
+    </div>
+    <div class="reviews-overflow anim d1">
+      <div class="reviews-track">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">«El-crm полностью изменила наш подход к продажам. За 3 месяца конверсия выросла с 12% до 21%. Интерфейс настолько интуитивный, что команда освоила его без обучения.»</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">АК</div>
+            <div><div class="reviewer-name">Алексей Козлов</div><div class="reviewer-role">Директор по продажам, ООО «ПрогрессТех»</div></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">«Интеграция с Telegram и 1С сэкономила нашим менеджерам 2 часа в день. Рекомендую всем компаниям, которые хотят автоматизировать рутину и сосредоточиться на клиентах.»</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">МВ</div>
+            <div><div class="reviewer-name">Мария Волкова</div><div class="reviewer-role">CEO, Агентство «ДиректМаркет»</div></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">«Переехали с другой CRM — и не пожалели. Поддержка отвечает за 5 минут, функционал покрывает 100% наших задач, а цена в 3 раза ниже конкурентов. Это лучшее решение на рынке.»</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">ДС</div>
+            <div><div class="reviewer-name">Дмитрий Соколов</div><div class="reviewer-role">Руководитель отдела продаж, «СтройГрупп»</div></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">«Аналитика в El-crm — это что-то с чем-то. Наконец-то вижу реальную картину: какие каналы работают, кто из менеджеров приносит деньги, где узкое место в воронке.»</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">ЕП</div>
+            <div><div class="reviewer-name">Екатерина Петрова</div><div class="reviewer-role">Финансовый директор, ООО «МедиаФлоу»</div></div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">«Внедрили El-crm в сеть из 12 магазинов. Теперь весь учёт корпоративных клиентов централизован. Продажи выросли на 28% уже в первые 2 месяца после запуска.»</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">НИ</div>
+            <div><div class="reviewer-name">Николай Иванов</div><div class="reviewer-role">Владелец сети «МаркетПлюс»</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-controls" style="margin-top:32px">
+      <button class="slider-btn reviews-prev" aria-label="Назад">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="slider-btn reviews-next" aria-label="Вперёд">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section section-pad">
+  <div class="container">
+    <div class="section-center anim">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">Часто задаваемые вопросы</h2>
+      <p class="section-sub">Не нашли ответ? Напишите нам — ответим за 5 минут</p>
+    </div>
+    <div class="faq-list anim d1">
+      <div class="faq-item open">
+        <div class="faq-q">Нужны ли технические знания для настройки El-crm?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Нет, El-crm создана так, чтобы начать работу мог любой сотрудник без технических знаний. Регистрация, базовая настройка воронки и импорт клиентов занимают не более 30 минут. Для более сложных интеграций наша команда поддержки поможет бесплатно в течение первых 30 дней.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Можно ли перенести данные из другой CRM?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Да, мы поддерживаем импорт из Bitrix24, AmoCRM, RetailCRM, Salesforce и любого источника в формате Excel/CSV. Для крупных баз данных мы предоставляем бесплатную помощь в миграции — ваш персональный менеджер проведёт весь процесс.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Как устроена техническая поддержка?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Поддержка работает 24/7 через чат в системе, Telegram и email. На тарифе «Бизнес» и выше — выделенный менеджер с гарантированным временем ответа 15 минут. SLA на тарифе Enterprise — 99.9% доступности с компенсацией в случае нарушения.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Где хранятся данные? Безопасно ли это?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Данные хранятся на серверах в России и Узбекистане (по выбору). Все данные шифруются по стандарту AES-256 при передаче и хранении. Мы соответствуем требованиям 152-ФЗ и проводим регулярные аудиты безопасности. Резервное копирование — каждые 6 часов.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Можно ли отменить подписку в любой момент?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Да, вы можете отменить подписку в любой момент без штрафов и скрытых платежей. После отмены у вас остаётся доступ до конца оплаченного периода. Все ваши данные можно экспортировать в любое время.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Есть ли мобильное приложение?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Да, приложения доступны для iOS и Android. Мобильная версия включает все ключевые функции: управление сделками, просмотр клиентов, постановка задач, получение уведомлений и работа в режиме офлайн с синхронизацией при подключении к интернету.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="lead-section section-pad" id="lead">
+  <div class="container">
+    <div class="section-center anim" style="margin-bottom:48px">
+      <span class="section-label">Начать бесплатно</span>
+      <h2 class="section-title">Попробуйте El-crm 14 дней бесплатно</h2>
+      <p class="section-sub">Никакой кредитной карты. Полный доступ ко всем функциям. Отмена в любой момент.</p>
+    </div>
+    <div class="lead-wrap anim d1">
+      <form novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="lead-name">Ваше имя</label>
+            <input id="lead-name" class="f-input" type="text" placeholder="Иван Иванов" required>
+          </div>
+          <div class="form-group">
+            <label for="lead-org">Организация</label>
+            <input id="lead-org" class="f-input" type="text" placeholder="ООО «Компания»">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lead-email">Email</label>
+          <input id="lead-email" class="f-input" type="email" placeholder="you@company.com" required>
+        </div>
+        <div class="form-group">
+          <label>Телефон</label>
+          <div class="phone-wrap">
+            <select class="f-input phone-code">
+              <option>+7</option>
+              <option>+998</option>
+              <option>+375</option>
+              <option>+380</option>
+              <option>+77</option>
+            </select>
+            <input class="f-input" type="tel" placeholder="900 123-45-67">
+          </div>
+        </div>
+        <div class="cb-wrap">
+          <input type="checkbox" id="lead-agree" required>
+          <label for="lead-agree">Я принимаю <a href="offer.html">публичную оферту</a> и <a href="privacy.html">политику конфиденциальности</a></label>
+        </div>
+        <button type="submit" class="btn btn-primary f-submit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Начать бесплатно
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Адреса</h4>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Ташкент, ул. Амира Темура 107Б, оф. 412</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Москва, Пресненская наб. 6, стр. 2</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.83 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+998 71 200-00-01</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.83 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+7 495 123-45-67</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>hello@el-crm.uz</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Мы в соцсетях</h4>
+        <div class="socials">
+          <a href="#" class="soc-btn" aria-label="Telegram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.8 2L2 10.3l7.3 1.8L17 6.7l-6.3 6.5 7.3 4.7L21.8 2z"/></svg>
+          </a>
+          <a href="#" class="soc-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="soc-btn" aria-label="YouTube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+          <a href="#" class="soc-btn" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+        <h4 style="margin-top:0">Оплата</h4>
+        <div class="pay-logos">
+          <span class="pay-logo">VISA</span>
+          <span class="pay-logo">MC</span>
+          <span class="pay-logo">HUMO</span>
+          <span class="pay-logo">UZCARD</span>
+          <span class="pay-logo">CLICK</span>
+          <span class="pay-logo">PAYME</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="pricing.html">Тарифы</a></li>
+          <li><a href="news.html">Новости</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="offer.html">Публичная оферта</a></li>
+          <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-l">
+        <span>© 2025 El-crm. Все права защищены.</span>
+        <span class="sep">·</span>
+        <span>Разработано <a href="#">IT-Studio</a></span>
+      </div>
+      <div class="footer-bottom-r">
+        <a href="offer.html">Публичная оферта</a>
+        <span class="sep">·</span>
+        <a href="privacy.html">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" aria-label="Наверх">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="js/cubes.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

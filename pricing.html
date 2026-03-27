@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Тарифы — El-crm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="cubes-bg"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg></span>
+      El-crm
+    </a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="pricing.html" class="active">Тарифы</a>
+      <a href="news.html">Новости</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher">
+        <button class="lang-btn active">RU</button>
+        <button class="lang-btn">EN</button>
+      </div>
+      <a href="index.html#lead" class="btn btn-primary" style="padding:10px 22px;font-size:.88rem">Войти / Регистрация</a>
+    </div>
+    <button class="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav">
+  <a href="index.html">Главная</a><a href="pricing.html">Тарифы</a>
+  <a href="news.html">Новости</a><a href="contacts.html">Контакты</a>
+  <a href="index.html#lead" class="btn btn-primary">Войти / Регистрация</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Тарифы</span>
+    <h1>Простые и прозрачные цены</h1>
+    <p>Начните бесплатно. Масштабируйтесь по мере роста. Никаких скрытых платежей.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section section-pad">
+  <div class="container">
+
+    <!-- TOGGLE -->
+    <div class="pricing-toggle anim">
+      <span class="tog-label tog-month active">Месяц</span>
+      <div class="tog-switch" role="switch" aria-checked="false" tabindex="0"></div>
+      <span class="tog-label tog-year">Год</span>
+      <span class="tog-badge">Экономия 20%</span>
+    </div>
+
+    <!-- PLANS -->
+    <div class="pricing-grid anim d1">
+
+      <!-- START -->
+      <div class="plan-card">
+        <div class="plan-name">Старт</div>
+        <div class="plan-price">
+          <span class="price-cur">₽</span>
+          <span class="price-amt" data-m="990" data-y="792">990</span>
+          <span class="price-per">/ мес</span>
+        </div>
+        <p class="plan-desc">Идеально для фрилансеров и малого бизнеса, которые только начинают автоматизировать продажи.</p>
+        <div class="plan-feats">
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>До 3 пользователей</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>500 контактов</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>1 воронка продаж</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Email-интеграция</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Мобильное приложение</div>
+          <div class="plan-feat off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Аналитика (расширенная)</div>
+          <div class="plan-feat off"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>API доступ</div>
+        </div>
+        <a href="index.html#lead" class="btn btn-outline plan-btn">Начать бесплатно</a>
+      </div>
+
+      <!-- BUSINESS (popular) -->
+      <div class="plan-card popular">
+        <div class="popular-badge">⭐ Популярный</div>
+        <div class="plan-name">Бизнес</div>
+        <div class="plan-price">
+          <span class="price-cur">₽</span>
+          <span class="price-amt" data-m="2990" data-y="2392">2 990</span>
+          <span class="price-per">/ мес</span>
+        </div>
+        <p class="plan-desc">Для растущих команд, которым нужны автоматизация, аналитика и интеграции с внешними сервисами.</p>
+        <div class="plan-feats">
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>До 25 пользователей</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Неограниченные контакты</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Неограниченные воронки</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Telegram + WhatsApp</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Расширенная аналитика</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>API доступ</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Автоматизация задач</div>
+        </div>
+        <a href="index.html#lead" class="btn btn-primary plan-btn">Попробовать 14 дней</a>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="plan-card">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-price">
+          <span class="price-cur">₽</span>
+          <span class="price-amt" data-m="9900" data-y="7920">9 900</span>
+          <span class="price-per">/ мес</span>
+        </div>
+        <p class="plan-desc">Полный контроль для крупных компаний: выделенный сервер, кастомизация и персональная поддержка.</p>
+        <div class="plan-feats">
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Неограниченные пользователи</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Выделенный сервер</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Кастомные поля и модули</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SLA 99.9%</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Персональный менеджер</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Интеграция с 1С / ERP</div>
+          <div class="plan-feat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Обучение команды</div>
+        </div>
+        <a href="contacts.html" class="btn btn-outline plan-btn">Связаться с нами</a>
+      </div>
+    </div>
+
+    <!-- TRUST SIGNALS -->
+    <div class="trust-bar anim">
+      <div class="trust-item">
+        <div class="trust-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="trust-text"><strong>14 дней бесплатно</strong><span>Без карты. Без обязательств.</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
+        <div class="trust-text"><strong>Отмена в любой момент</strong><span>Без штрафов и скрытых платежей.</span></div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <div class="trust-text"><strong>Безопасная оплата</strong><span>Visa, MC, HUMO, Uzcard, Click, Payme.</span></div>
+      </div>
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <div class="anim d2" style="margin-top:80px">
+      <div class="section-center" style="margin-bottom:40px">
+        <span class="section-label">Сравнение</span>
+        <h2 class="section-title">Подробное сравнение тарифов</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th style="width:40%">Функция</th>
+              <th>Старт</th>
+              <th>Бизнес</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Пользователи</td><td>3</td><td>25</td><td>Без лимита</td></tr>
+            <tr><td>Контакты</td><td>500</td><td>Без лимита</td><td>Без лимита</td></tr>
+            <tr><td>Воронки продаж</td><td>1</td><td>Без лимита</td><td>Без лимита</td></tr>
+            <tr><td>Email-интеграция</td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+            <tr><td>Telegram / WhatsApp</td><td><svg class="c-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+            <tr><td>Расширенная аналитика</td><td><svg class="c-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+            <tr><td>API доступ</td><td><svg class="c-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+            <tr><td>Автоматизация задач</td><td><svg class="c-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+            <tr><td>Кастомные поля</td><td><svg class="c-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="c-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+            <tr><td>Выделенный сервер</td><td><svg class="c-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="c-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+            <tr><td>Интеграция с 1С / ERP</td><td><svg class="c-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="c-no" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></td><td><svg class="c-yes" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></td></tr>
+            <tr><td>SLA</td><td>99%</td><td>99.5%</td><td>99.9%</td></tr>
+            <tr><td>Техподдержка</td><td>Email, чат</td><td>24/7 чат</td><td>Персональный менеджер</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ENTERPRISE BANNER -->
+    <div class="enterprise-banner anim d3">
+      <div class="ent-text">
+        <h3>Не нашли подходящий тариф?</h3>
+        <p>Настроим El-crm индивидуально под ваши задачи и бизнес-процессы. Обсудим объёмы, интеграции и условия.</p>
+      </div>
+      <a href="contacts.html" class="btn btn-white" style="flex-shrink:0">
+        Связаться с нами
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Адреса</h4><ul>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Ташкент, ул. Амира Темура 107Б</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Москва, Пресненская наб. 6</li>
+      </ul></div>
+      <div class="footer-col"><h4>Контакты</h4><ul>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.83 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+998 71 200-00-01</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>hello@el-crm.uz</li>
+      </ul></div>
+      <div class="footer-col"><h4>Мы в соцсетях</h4>
+        <div class="socials">
+          <a href="#" class="soc-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.8 2L2 10.3l7.3 1.8L17 6.7l-6.3 6.5 7.3 4.7L21.8 2z"/></svg></a>
+          <a href="#" class="soc-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="soc-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+        <div class="pay-logos">
+          <span class="pay-logo">VISA</span><span class="pay-logo">MC</span>
+          <span class="pay-logo">HUMO</span><span class="pay-logo">UZCARD</span>
+          <span class="pay-logo">CLICK</span><span class="pay-logo">PAYME</span>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Навигация</h4><ul>
+        <li><a href="index.html">Главная</a></li><li><a href="pricing.html">Тарифы</a></li>
+        <li><a href="news.html">Новости</a></li><li><a href="contacts.html">Контакты</a></li>
+        <li><a href="offer.html">Публичная оферта</a></li><li><a href="privacy.html">Политика</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-l"><span>© 2025 El-crm.</span><span class="sep">·</span><span>Разработано <a href="#">IT-Studio</a></span></div>
+      <div class="footer-bottom-r"><a href="offer.html">Публичная оферта</a><span class="sep">·</span><a href="privacy.html">Политика конфиденциальности</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+<script src="js/cubes.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
