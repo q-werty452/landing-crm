@@ -32,7 +32,7 @@
     <div class="header-actions">
       <div class="lang-switcher">
         <button class="lang-btn active">RU</button>
-        <button class="lang-btn">EN</button>
+        <button class="lang-btn">KG</button>
       </div>
       <a href="#lead" class="btn btn-primary" style="padding:10px 22px;font-size:.88rem">Войти / Регистрация</a>
     </div>
@@ -42,14 +42,22 @@
   </div>
 </header>
 
-<!-- МОБИЛЬНАЯ НАВИГАЦИЯ -->
-<nav class="mobile-nav">
-  <a href="index.html">Главная</a>
-  <a href="pricing.html">Тарифы</a>
-  <a href="news.html">Новости</a>
-  <a href="contacts.html">Контакты</a>
-  <a href="#lead" class="btn btn-primary">Войти / Регистрация</a>
-</nav>
+<!-- МОБИЛЬНАЯ НАВИГАЦИЯ (плавающая панель) -->
+<div class="nav-menu-panel" id="nav-panel">
+  <nav class="nav-panel-links">
+    <a href="index.html" class="nav-panel-link">Главная</a>
+    <a href="pricing.html" class="nav-panel-link">Тарифы</a>
+    <a href="news.html" class="nav-panel-link">Новости</a>
+    <a href="contacts.html" class="nav-panel-link">Контакты</a>
+  </nav>
+  <div class="nav-panel-bottom">
+    <div class="lang-switcher">
+      <button class="lang-btn active">RU</button>
+      <button class="lang-btn">KG</button>
+    </div>
+    <a href="#lead" class="btn btn-primary nav-panel-cta">Попробовать бесплатно</a>
+  </div>
+</div>
 
 <!-- ГЕРОЙ -->
 <section class="hero">
@@ -910,12 +918,44 @@
         </div>
         <h4 style="margin-top:0">Оплата</h4>
         <div class="pay-logos">
-          <span class="pay-logo">VISA</span>
-          <span class="pay-logo">MC</span>
-          <span class="pay-logo">HUMO</span>
-          <span class="pay-logo">UZCARD</span>
-          <span class="pay-logo">CLICK</span>
-          <span class="pay-logo">PAYME</span>
+          <!-- Visa -->
+          <span class="pay-logo" title="Visa">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 18">
+              <text x="1" y="15" font-family="Arial,sans-serif" font-size="16" font-weight="900" fill="#1A1F71" letter-spacing="2">VISA</text>
+            </svg>
+          </span>
+          <!-- Mastercard -->
+          <span class="pay-logo" title="Mastercard">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 22">
+              <circle cx="14" cy="11" r="10" fill="#EB001B"/>
+              <circle cx="24" cy="11" r="10" fill="#F79E1B" fill-opacity="0.9"/>
+              <path d="M19 3.3a10 10 0 0 1 0 15.4A10 10 0 0 1 19 3.3z" fill="#FF5F00"/>
+            </svg>
+          </span>
+          <!-- HUMO -->
+          <span class="pay-logo" title="HUMO">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 18">
+              <text x="1" y="14" font-family="Arial,sans-serif" font-size="13" font-weight="800" fill="#6B3FA0" letter-spacing="0.5">HUMO</text>
+            </svg>
+          </span>
+          <!-- UzCard -->
+          <span class="pay-logo" title="UzCard">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 18">
+              <text x="1" y="14" font-family="Arial,sans-serif" font-size="12" font-weight="800" fill="#0070BA" letter-spacing="0.3">UZCARD</text>
+            </svg>
+          </span>
+          <!-- Click -->
+          <span class="pay-logo" title="Click">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 18">
+              <text x="1" y="14" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#009CDE">Click</text>
+            </svg>
+          </span>
+          <!-- Payme -->
+          <span class="pay-logo" title="Payme">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 18">
+              <text x="1" y="14" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#00ADEF">Payme</text>
+            </svg>
+          </span>
         </div>
       </div>
       <div class="footer-col">

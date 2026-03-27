@@ -12,18 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
   scrollTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   /* ── БУРГЕР-МЕНЮ ── */
-  const burger    = document.querySelector('.burger');
-  const mobileNav = document.querySelector('.mobile-nav');
+  const burger   = document.querySelector('.burger');
+  const navPanel = document.querySelector('.nav-menu-panel');
   burger?.addEventListener('click', () => {
     const open = burger.classList.toggle('open');
-    mobileNav?.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
+    navPanel?.classList.toggle('is-open', open);
   });
-  mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navPanel?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     burger?.classList.remove('open');
-    mobileNav.classList.remove('open');
-    document.body.style.overflow = '';
+    navPanel.classList.remove('is-open');
   }));
+  // Закрытие по клику вне панели
+  document.addEventListener('click', e => {
+    if (navPanel?.classList.contains('is-open') &&
+        !navPanel.contains(e.target) &&
+        !burger.contains(e.target)) {
+      burger?.classList.remove('open');
+      navPanel.classList.remove('is-open');
+    }
+  });
 
   /* ── ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА ── */
   document.querySelectorAll('.lang-btn').forEach(btn =>
