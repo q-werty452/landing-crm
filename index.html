@@ -2,12 +2,14 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>El-crm — CRM для вашего бизнеса</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>El-CRM — CRM для вашего бизнеса</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+
 </head>
 <body>
 
@@ -21,7 +23,7 @@
       <span class="logo-icon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
       </span>
-      El-crm
+      <span class="logo-text-accent">El</span>- CRM
     </a>
     <nav>
       <a href="index.html" class="active">Главная</a>
@@ -30,9 +32,15 @@
       <a href="contacts.html">Контакты</a>
     </nav>
     <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle-btn" title="Переключить тему" aria-label="Переключить тему">
+        <span id="theme-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6a6 6 0 1 0 6 6"/><circle cx="12" cy="12" r="2"/></svg></span>
+        <span id="theme-label">Зелёная</span>
+      </button>
+      
       <div class="lang-switcher">
         <button class="lang-btn active">RU</button>
         <button class="lang-btn">KG</button>
+        <button class="lang-btn">EN</button>
       </div>
       <a href="#lead" class="btn btn-primary" style="padding:10px 22px;font-size:.88rem">Войти / Регистрация</a>
     </div>
@@ -54,6 +62,7 @@
     <div class="lang-switcher">
       <button class="lang-btn active">RU</button>
       <button class="lang-btn">KG</button>
+      <button class="lang-btn">EN</button>
     </div>
     <a href="#lead" class="btn btn-primary nav-panel-cta">Попробовать бесплатно</a>
   </div>
@@ -67,12 +76,16 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         Новый уровень управления продажами
       </div>
-      <h1>CRM которая <em>растёт</em><br>вместе с вашим<br>бизнесом</h1>
+      <h1>Управляйте продажами, командой и расходами в одной системе</h1>
       <p class="hero-desc">El-crm — умная CRM-система для автоматизации продаж, управления клиентами и роста выручки. Простой старт, безграничные возможности.</p>
       <div class="hero-actions">
         <a href="#lead" class="btn btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           Попробовать бесплатно
+        </a>
+        <a href="#lead" class="btn b2tn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="0 0 0 0 0 0 11 22 21 10 12 10 13 2"/></svg>
+          Инструкции
         </a>
         <a href="pricing.html" class="btn btn-outline">Посмотреть тарифы</a>
       </div>
@@ -143,9 +156,9 @@
                     <div class="stat-label" style="margin-bottom:10px">Активность команды</div>
                     <div style="display:flex;gap:4px;align-items:flex-end;height:60px">
                       <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:45%;opacity:.5"></div>
-                      <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:70%"></div>
+                      <div style="flex:1;background:rgb(4, 4, 147);border-radius:3px 3px 0 0;height:70%"></div>
                       <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:55%;opacity:.7"></div>
-                      <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:90%"></div>
+                      <div style="flex:1;background:rgb(4, 4, 147);border-radius:3px 3px 0 0;height:90%"></div>
                       <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:65%;opacity:.8"></div>
                       <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:80%"></div>
                       <div style="flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:50%;opacity:.6"></div>
@@ -422,7 +435,7 @@
     <div class="feat-filters anim" style="margin-bottom:40px">
       <button class="feat-filter active" data-cat="all">Все</button>
       <button class="feat-filter" data-cat="crm">CRM</button>
-      <button class="feat-filter" data-cat="hr">HR</button>
+      <button class="feat-filter" data-cat="hr">Сотрудники</button>
       <button class="feat-filter" data-cat="finance">Финансы</button>
       <button class="feat-filter" data-cat="integrations">Интеграции</button>
     </div>
@@ -678,54 +691,7 @@
   </div>
 </section>
 
-<!-- ЧАСТЫЕ ВОПРОСЫ -->
-<section class="faq-section section-pad">
-  <div class="container">
-    <div class="section-center anim">
-      <span class="section-label">FAQ</span>
-      <h2 class="section-title">Часто задаваемые вопросы</h2>
-      <p class="section-sub">Не нашли ответ? Напишите нам — ответим за 5 минут</p>
-    </div>
-    <div class="faq-list anim d1">
-      <div class="faq-item open">
-        <div class="faq-q">Нужны ли технические знания для настройки El-crm?
-          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Нет, El-crm создана так, чтобы начать работу мог любой сотрудник без технических знаний. Регистрация, базовая настройка воронки и импорт клиентов занимают не более 30 минут. Для более сложных интеграций наша команда поддержки поможет бесплатно в течение первых 30 дней.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Можно ли перенести данные из другой CRM?
-          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Да, мы поддерживаем импорт из Bitrix24, AmoCRM, RetailCRM, Salesforce и любого источника в формате Excel/CSV. Для крупных баз данных мы предоставляем бесплатную помощь в миграции — ваш персональный менеджер проведёт весь процесс.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Как устроена техническая поддержка?
-          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Поддержка работает 24/7 через чат в системе, Telegram и email. На тарифе «Бизнес» и выше — выделенный менеджер с гарантированным временем ответа 15 минут. SLA на тарифе Enterprise — 99.9% доступности с компенсацией в случае нарушения.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Где хранятся данные? Безопасно ли это?
-          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Данные хранятся на серверах в России и Узбекистане (по выбору). Все данные шифруются по стандарту AES-256 при передаче и хранении. Мы соответствуем требованиям 152-ФЗ и проводим регулярные аудиты безопасности. Резервное копирование — каждые 6 часов.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Можно ли отменить подписку в любой момент?
-          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Да, вы можете отменить подписку в любой момент без штрафов и скрытых платежей. После отмены у вас остаётся доступ до конца оплаченного периода. Все ваши данные можно экспортировать в любое время.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Есть ли мобильное приложение?
-          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">Да, приложения доступны для iOS и Android. Мобильная версия включает все ключевые функции: управление сделками, просмотр клиентов, постановка задач, получение уведомлений и работа в режиме офлайн с синхронизацией при подключении к интернету.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- МИНИ ТАРИФЫ -->
 <section class="mini-pricing-section section-pad">
@@ -778,6 +744,55 @@
       </div>
     </div>
     <div class="mp-all-link anim"><a href="pricing.html">Сравнить все тарифы →</a></div>
+  </div>
+</section>
+
+<!-- ЧАСТЫЕ ВОПРОСЫ -->
+<section class="faq-section section-pad">
+  <div class="container">
+    <div class="section-center anim">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">Часто задаваемые вопросы</h2>
+      <p class="section-sub">Не нашли ответ? Напишите нам — ответим за 5 минут</p>
+    </div>
+    <div class="faq-list anim d1">
+      <div class="faq-item open">
+        <div class="faq-q">Нужны ли технические знания для настройки El-crm?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Нет, El-crm создана так, чтобы начать работу мог любой сотрудник без технических знаний. Регистрация, базовая настройка воронки и импорт клиентов занимают не более 30 минут. Для более сложных интеграций наша команда поддержки поможет бесплатно в течение первых 30 дней.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Можно ли перенести данные из другой CRM?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Да, мы поддерживаем импорт из Bitrix24, AmoCRM, RetailCRM, Salesforce и любого источника в формате Excel/CSV. Для крупных баз данных мы предоставляем бесплатную помощь в миграции — ваш персональный менеджер проведёт весь процесс.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Как устроена техническая поддержка?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Поддержка работает 24/7 через чат в системе, Telegram и email. На тарифе «Бизнес» и выше — выделенный менеджер с гарантированным временем ответа 15 минут. SLA на тарифе Enterprise — 99.9% доступности с компенсацией в случае нарушения.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Где хранятся данные? Безопасно ли это?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Данные хранятся на серверах в России и Узбекистане (по выбору). Все данные шифруются по стандарту AES-256 при передаче и хранении. Мы соответствуем требованиям 152-ФЗ и проводим регулярные аудиты безопасности. Резервное копирование — каждые 6 часов.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Можно ли отменить подписку в любой момент?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Да, вы можете отменить подписку в любой момент без штрафов и скрытых платежей. После отмены у вас остаётся доступ до конца оплаченного периода. Все ваши данные можно экспортировать в любое время.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Есть ли мобильное приложение?
+          <span class="faq-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Да, приложения доступны для iOS и Android. Мобильная версия включает все ключевые функции: управление сделками, просмотр клиентов, постановка задач, получение уведомлений и работа в режиме офлайн с синхронизацией при подключении к интернету.</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
