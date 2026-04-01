@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Быстрый старт — Инструкции El-crm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+<style>
+  /* ===== СТАТЬЯ ===== */
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+  }
+
+  .article-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: .9rem;
+    margin-bottom: 40px;
+    transition: gap var(--transition), opacity var(--transition);
+    padding-top: calc(var(--header-h) + 48px);
+  }
+
+  .article-back:hover {
+    gap: 12px;
+    opacity: .8;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .article-tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent-strong);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: var(--radius-full);
+  }
+
+  .article-date {
+    color: var(--text-muted);
+    font-size: .85rem;
+  }
+
+  .article-wrap h1 {
+    margin-bottom: 24px;
+    color: var(--text);
+  }
+
+  .article-lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .article-body h2 {
+    font-size: 1.3rem;
+    margin: 40px 0 14px;
+    color: var(--text);
+  }
+
+  .article-body p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+
+  .article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .article-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .article-list li .li-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Плашка «Важный совет» */
+  .tip-block {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 32px 0;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .tip-icon {
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .tip-content strong {
+    display: block;
+    color: var(--accent-strong);
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: .95rem;
+  }
+
+  .tip-content p {
+    margin: 0;
+    color: var(--text);
+    font-size: .93rem;
+    line-height: 1.65;
+  }
+
+  /* Навигация по статьям */
+  .article-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+
+  .article-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: .9rem;
+    transition: gap var(--transition), opacity var(--transition);
+  }
+
+  .article-nav a:hover {
+    opacity: .75;
+  }
+
+  .article-nav .nav-next {
+    margin-left: auto;
+  }
+
+</style>
+</head>
+<body>
+
+<div id="cubes-bg"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg></span>
+      <span class="logo-text-accent">El</span>- CRM
+    </a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="pricing.html">Тарифы</a>
+      <a href="news.html">Новости</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle-btn" title="Переключить тему" aria-label="Переключить тему">
+        <span id="theme-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6a6 6 0 1 0 6 6"/><circle cx="12" cy="12" r="2"/></svg></span>
+        <span id="theme-label">Зелёная</span>
+      </button>
+      <div class="lang-switcher">
+        <button class="lang-btn active">RU</button>
+        <button class="lang-btn">KG</button>
+        <button class="lang-btn">EN</button>
+      </div>
+      <a href="index.html#lead" class="btn btn-primary" style="padding:10px 22px;font-size:.88rem">Войти / Регистрация</a>
+    </div>
+    <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="nav-menu-panel" id="nav-panel">
+  <nav class="nav-panel-links">
+    <a href="index.html" class="nav-panel-link">Главная</a>
+    <a href="pricing.html" class="nav-panel-link">Тарифы</a>
+    <a href="news.html" class="nav-panel-link">Новости</a>
+    <a href="contacts.html" class="nav-panel-link">Контакты</a>
+  </nav>
+  <div class="nav-panel-bottom">
+    <div class="lang-switcher">
+      <button class="lang-btn active">RU</button>
+      <button class="lang-btn">KG</button>
+      <button class="lang-btn">EN</button>
+    </div>
+    <a href="index.html#lead" class="btn btn-primary nav-panel-cta">Попробовать бесплатно</a>
+  </div>
+</div>
+
+<!-- КОНТЕНТ СТАТЬИ -->
+<main>
+  <div class="article-wrap">
+
+    <a href="instructions.html" class="article-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Назад к инструкциям
+    </a>
+
+    <div class="article-meta anim">
+      <span class="article-tag">Быстрый старт</span>
+      <span class="article-date">1 апреля 2025</span>
+    </div>
+
+    <h1 class="anim d1">Как настроить El-crm с нуля за 15 минут</h1>
+
+    <p class="article-lead anim d2">
+      Это руководство поможет вам пройти путь от регистрации до первой закрытой сделки. Вы настроите воронку продаж, добавите команду и подключите нужные каналы — шаг за шагом, без лишнего.
+    </p>
+
+    <!-- ГАЛЕРЕЯ -->
+    <div class="instr-gallery anim d3">
+
+      <!-- Главное фото -->
+      <div class="main-image-container" id="main-image-container">
+        <img id="gallery-main-img"
+             src="https://picsum.photos/seed/elcrm1/1200/675"
+             alt="Дашборд El-crm" />
+      </div>
+
+      <!-- Миниатюры -->
+      <div class="thumbnails-container">
+        <div class="thumb-img-wrap active"
+             data-src="https://picsum.photos/seed/elcrm1/1200/675"
+             data-alt="Дашборд El-crm">
+          <img src="https://picsum.photos/seed/elcrm1/400/225" alt="Дашборд El-crm" loading="lazy" />
+        </div>
+        <div class="thumb-img-wrap"
+             data-src="https://picsum.photos/seed/elcrm2/1200/675"
+             data-alt="Воронка продаж">
+          <img src="https://picsum.photos/seed/elcrm2/400/225" alt="Воронка продаж" loading="lazy" />
+        </div>
+        <div class="thumb-img-wrap"
+             data-src="https://picsum.photos/seed/elcrm3/1200/675"
+             data-alt="База клиентов">
+          <img src="https://picsum.photos/seed/elcrm3/400/225" alt="База клиентов" loading="lazy" />
+        </div>
+        <div class="thumb-img-wrap"
+             data-src="https://picsum.photos/seed/elcrm4/1200/675"
+             data-alt="Настройки системы">
+          <img src="https://picsum.photos/seed/elcrm4/400/225" alt="Настройки системы" loading="lazy" />
+        </div>
+      </div>
+
+    </div><!-- /gallery -->
+
+    <div class="article-body anim d4">
+
+      <h2>Шаг 1. Зарегистрируйтесь и войдите</h2>
+      <p>
+        Перейдите на страницу регистрации и введите email вашей компании. Система автоматически создаст рабочее пространство и отправит ссылку для подтверждения. После первого входа вам предложат короткий онбординг — пройдите его, чтобы сразу настроить базовые параметры.
+      </p>
+
+      <h2>Шаг 2. Настройте воронку продаж</h2>
+      <p>
+        В разделе «Сделки» создайте этапы воронки, соответствующие вашему циклу продаж. El-crm поставляется с шаблоном по умолчанию, который вы можете адаптировать:
+      </p>
+
+      <ul class="article-list">
+        <li>
+          <span class="li-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span>Переименуйте этапы под свою терминологию (например, «Новый лид», «Квалификация», «КП отправлено», «Закрыт»)</span>
+        </li>
+        <li>
+          <span class="li-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span>Добавьте обязательные поля для каждого этапа — это предотвратит потерю важных данных</span>
+        </li>
+        <li>
+          <span class="li-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span>Задайте дедлайны и автоматические напоминания менеджерам при зависании сделки</span>
+        </li>
+        <li>
+          <span class="li-check">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span>Настройте вероятность закрытия для каждого этапа — дашборд будет показывать прогнозируемую выручку</span>
+        </li>
+      </ul>
+
+      <div class="tip-block">
+        <span class="tip-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </span>
+        <div class="tip-content">
+          <strong>Важный совет</strong>
+          <p>Не создавайте больше 7 этапов воронки — это усложняет работу менеджеров и замедляет ввод данных. Оптимальное количество этапов для большинства B2B-бизнесов: 4–5. Вы всегда сможете добавить этапы позже, когда процессы устоятся.</p>
+        </div>
+      </div>
+
+      <h2>Шаг 3. Добавьте сотрудников</h2>
+      <p>
+        Перейдите в «Настройки → Команда» и пригласите коллег по email. Для каждого сотрудника назначьте роль: администратор, руководитель отдела или менеджер. Роли определяют, какие данные видит сотрудник и что может редактировать.
+      </p>
+      <p>
+        После приглашения система отправит каждому участнику письмо с инструкцией по первому входу. Как только они зайдут, вы увидите их в разделе аналитики.
+      </p>
+
+      <h2>Шаг 4. Внесите первые сделки</h2>
+      <p>
+        Создайте 2–3 тестовых контакта и переведите их по этапам воронки. Это позволит убедиться, что логика воронки работает корректно, а уведомления приходят вовремя. После проверки вы можете импортировать всю клиентскую базу из Excel одним файлом.
+      </p>
+
+      <div class="article-nav">
+        <a href="instructions.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          Все инструкции
+        </a>
+        <a href="instruction-detail.html" class="nav-next">
+          Управление командой
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- ПОДВАЛ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Адреса</h4><ul>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Ташкент, ул. Амира Темура 107Б</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Москва, Пресненская наб. 6</li>
+      </ul></div>
+      <div class="footer-col"><h4>Контакты</h4><ul>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.83 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+998 71 200-00-01</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>hello@el-crm.uz</li>
+      </ul></div>
+      <div class="footer-col"><h4>Мы в соцсетях</h4>
+        <div class="socials">
+          <a href="#" class="soc-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.8 2L2 10.3l7.3 1.8L17 6.7l-6.3 6.5 7.3 4.7L21.8 2z"/></svg></a>
+          <a href="#" class="soc-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="soc-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+        <div class="pay-logos"><span class="pay-logo">VISA</span><span class="pay-logo">MC</span><span class="pay-logo">HUMO</span><span class="pay-logo">UZCARD</span></div>
+      </div>
+      <div class="footer-col"><h4>Навигация</h4><ul>
+        <li><a href="index.html">Главная</a></li><li><a href="pricing.html">Тарифы</a></li>
+        <li><a href="news.html">Новости</a></li><li><a href="contacts.html">Контакты</a></li>
+        <li><a href="instructions.html">Инструкции</a></li>
+        <li><a href="offer.html">Публичная оферта</a></li><li><a href="privacy.html">Политика</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-l"><span>© 2025 El-crm.</span><span class="sep">·</span><span>Разработано <a href="#">IT-Studio</a></span></div>
+      <div class="footer-bottom-r"><a href="offer.html">Публичная оферта</a><span class="sep">·</span><a href="privacy.html">Политика конфиденциальности</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+<!-- IMAGE MODAL -->
+<div class="image-modal" id="image-modal" role="dialog" aria-modal="true" aria-label="Просмотр изображения">
+  <div class="image-modal-backdrop" id="image-modal-backdrop"></div>
+  <div class="image-modal-content">
+    <button class="image-modal-close" id="image-modal-close" aria-label="Закрыть">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <img id="image-modal-img" src="" alt="" />
+  </div>
+</div>
+
+<script src="js/cubes.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function () {
+  var mainImg    = document.getElementById('gallery-main-img');
+  var modal      = document.getElementById('image-modal');
+  var modalImg   = document.getElementById('image-modal-img');
+  var modalClose = document.getElementById('image-modal-close');
+  var backdrop   = document.getElementById('image-modal-backdrop');
+
+  /* 1. Клик на миниатюру → обновляет главное фото */
+  document.querySelectorAll('.thumb-img-wrap').forEach(function (thumb) {
+    thumb.addEventListener('click', function () {
+      mainImg.src = this.dataset.src;
+      mainImg.alt = this.dataset.alt;
+      document.querySelectorAll('.thumb-img-wrap').forEach(function (t) {
+        t.classList.remove('active');
+      });
+      this.classList.add('active');
+    });
+  });
+
+  /* 2. Клик на главное фото → открывает модалку */
+  document.getElementById('main-image-container').addEventListener('click', function () {
+    modalImg.src = mainImg.src;
+    modalImg.alt = mainImg.alt;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  /* 3. Закрытие модалки */
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
+  });
+})();
+
+</script>
+</body>
+</html>

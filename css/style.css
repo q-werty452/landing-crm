@@ -469,7 +469,7 @@ header.scrolled {
 .logo-icon {
   width: 38px;
   height: 38px;
-  background: linear-gradient(135deg, blue, var(--accent-logo-end));
+  background: var(--logo-icon-grad);
   border-radius: 11px;
   display: flex;
   align-items: center;
@@ -1093,7 +1093,7 @@ nav a.active {
 .glass-icon {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, blue, #5B8AE0);
+  background: var(--glass-icon-grad);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -1197,18 +1197,21 @@ nav a.active {
 }
 
 .review-card {
-  min-width: calc(33.333% - 16px);
-  background: #fff;
+  /* ширина задаётся через JS — flex-shrink запрещён */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
   border-radius: var(--radius-lg);
   padding: 32px;
   border: 1px solid var(--border);
-  transition: all var(--transition);
-  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .review-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(66, 99, 235, .18);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-green);
 }
 
 .stars {
@@ -1216,13 +1219,15 @@ nav a.active {
   gap: 3px;
   margin-bottom: 16px;
   color: #F6C90E;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
 }
 
 .review-text {
+  flex: 1;
   color: var(--text);
   font-size: .93rem;
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 24px;
 }
 
@@ -1230,6 +1235,9 @@ nav a.active {
   display: flex;
   align-items: center;
   gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
 }
 
 .reviewer-avatar {
@@ -1241,6 +1249,7 @@ nav a.active {
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  font-size: .85rem;
   color: var(--accent);
   flex-shrink: 0;
 }
@@ -1248,11 +1257,39 @@ nav a.active {
 .reviewer-name {
   font-weight: 600;
   font-size: .9rem;
+  color: var(--text);
 }
 
 .reviewer-role {
-  font-size: .8rem;
+  font-size: .78rem;
   color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Точки-индикаторы */
+.reviews-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.reviews-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--transition), width var(--transition), border-radius var(--transition);
+}
+
+.reviews-dot.active {
+  background: var(--accent);
+  width: 24px;
+  border-radius: 4px;
 }
 
 /* ===== ЧАСТЫЕ ВОПРОСЫ ===== */
@@ -3190,7 +3227,7 @@ footer {
   .for-whom-grid          { grid-template-columns: repeat(2, 1fr); }
   .pricing-grid           { grid-template-columns: repeat(2, 1fr); }
   .footer-grid            { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-  .review-card            { min-width: calc(50% - 12px); }
+  .review-card            { /* ширина управляется JS */ }
   .trust-bar              { gap: 24px; }
   .problems-grid          { grid-template-columns: repeat(2, 1fr); }
   .how-steps              { grid-template-columns: 1fr 32px 1fr; row-gap: 32px; }
@@ -3219,7 +3256,7 @@ footer {
   .contacts-grid          { grid-template-columns: 1fr; }
   .footer-grid            { grid-template-columns: 1fr 1fr; }
   .footer-bottom          { flex-direction: column; text-align: center; }
-  .review-card            { min-width: 100%; }
+  .review-card            { /* ширина управляется JS */ }
   .enterprise-banner      { flex-direction: column; text-align: center; }
   .lead-wrap,
   .float-form             { padding: 28px 20px; }
@@ -3271,6 +3308,144 @@ footer {
   .problems-grid          { grid-template-columns: 1fr; }
   .ticker-track,
   .promo-track            { animation-duration: 19s; }
+}
+
+/* ===== ГАЛЕРЕЯ ИНСТРУКЦИЙ ===== */
+.instr-gallery {
+  margin: 36px 0 40px;
+}
+
+.main-image-container {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  cursor: zoom-in;
+  line-height: 0;
+  position: relative;
+}
+
+.main-image-container img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.main-image-container:hover img {
+  transform: scale(1.02);
+}
+
+.thumbnails-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumb-img-wrap {
+  flex: 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  line-height: 0;
+  transition: border-color var(--transition), opacity var(--transition),
+              transform var(--transition), box-shadow var(--transition);
+}
+
+.thumb-img-wrap img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-img-wrap:hover {
+  opacity: .82;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.thumb-img-wrap.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  opacity: 1;
+}
+
+/* ===== IMAGE MODAL (ЛАЙТБОКС) ===== */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .25s ease, visibility 0s linear .25s;
+}
+
+.image-modal.is-open {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .25s ease, visibility 0s linear 0s;
+}
+
+.image-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .82);
+  cursor: zoom-out;
+}
+
+.image-modal-content {
+  position: relative;
+  z-index: 1;
+  max-width: min(92vw, 1200px);
+  transform: scale(.9);
+  transition: transform .25s ease;
+}
+
+.image-modal.is-open .image-modal-content {
+  transform: scale(1);
+}
+
+.image-modal-content img {
+  display: block;
+  max-height: 90vh;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, .5);
+  object-fit: contain;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: background var(--transition), transform var(--transition);
+  z-index: 2;
+}
+
+.image-modal-close:hover {
+  background: var(--accent-darker);
+  transform: scale(1.12);
 }
 
 

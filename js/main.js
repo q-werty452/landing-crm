@@ -260,26 +260,89 @@ function makeSlider({ wrap, track, prev, next, dots, auto }) {
 
 /* ── СЛАЙДЕР ОТЗЫВОВ ── */
 function makeReviews() {
-  const tr = document.querySelector('.reviews-track');
-  if (!tr) return;
-  const cards = [...tr.querySelectorAll('.review-card')];
+  const overflow = document.querySelector('.reviews-overflow');
+  const tr       = document.querySelector('.reviews-track');
+  if (!tr || !overflow) return;
+  const cards    = [...tr.querySelectorAll('.review-card')];
   if (!cards.length) return;
 
+  const GAP = 24;
   let cur = 0;
-  const prv = document.querySelector('.reviews-prev');
-  const nxt = document.querySelector('.reviews-next');
+  let touchStartX = 0;
+
+  const prv      = document.querySelector('.reviews-prev');
+  const nxt      = document.querySelector('.reviews-next');
+  const dotsWrap = document.querySelector('.reviews-dots');
 
   function perView() {
-    return window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+    return window.innerWidth <= 640 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
   }
+
+  /* Считаем точную ширину карточки от реального контейнера */
+  function cardWidth() {
+    const pv = perView();
+    return (overflow.offsetWidth - GAP * (pv - 1)) / pv;
+  }
+
+  /* Применяем ширину ко всем карточкам */
+  function applyWidths() {
+    const w = cardWidth();
+    cards.forEach(c => { c.style.width = w + 'px'; c.style.minWidth = w + 'px'; });
+    return w;
+  }
+
+  /* Точки-индикаторы */
+  function buildDots() {
+    if (!dotsWrap) return;
+    const total = Math.max(1, cards.length - perView() + 1);
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'reviews-dot' + (i === cur ? ' active' : '');
+      btn.setAttribute('aria-label', 'Слайд ' + (i + 1));
+      btn.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(btn);
+    }
+  }
+
+  function updateDots() {
+    if (!dotsWrap) return;
+    dotsWrap.querySelectorAll('.reviews-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === cur);
+    });
+  }
+
+  function updateNavOpacity() {
+    const max = Math.max(0, cards.length - perView());
+    if (prv) prv.style.opacity = cur === 0   ? '.35' : '1';
+    if (nxt) nxt.style.opacity = cur >= max  ? '.35' : '1';
+  }
+
   function go(idx) {
-    const max = cards.length - perView();
+    const max = Math.max(0, cards.length - perView());
     cur = Math.max(0, Math.min(idx, max));
-    const w = cards[0].getBoundingClientRect().width + 24;
-    tr.style.transform = `translateX(-${cur * w}px)`;
+    const w = applyWidths();
+    tr.style.transform = `translateX(-${cur * (w + GAP)}px)`;
+    updateDots();
+    updateNavOpacity();
   }
+
+  /* Кнопки */
   prv?.addEventListener('click', () => go(cur - 1));
   nxt?.addEventListener('click', () => go(cur + 1));
-  window.addEventListener('resize', () => go(cur));
+
+  /* Свайп (touch) */
+  tr.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  tr.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) go(diff > 0 ? cur + 1 : cur - 1);
+  }, { passive: true });
+
+  /* Ресайз */
+  window.addEventListener('resize', () => { buildDots(); go(cur); });
+
+  buildDots();
   go(0);
 }

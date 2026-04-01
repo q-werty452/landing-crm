@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Инструкции — El-crm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+<style>
+  .instr-read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 12px;
+    transition: gap var(--transition), opacity var(--transition);
+  }
+  .instr-read-link:hover {
+    gap: 10px;
+    opacity: .8;
+  }
+</style>
+</head>
+<body>
+
+<div id="cubes-bg"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg></span>
+      <span class="logo-text-accent">El</span>- CRM
+    </a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="pricing.html">Тарифы</a>
+      <a href="instructions.html" class="active">Инструкции</a>
+      <a href="news.html">Новости</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle-btn" title="Переключить тему" aria-label="Переключить тему">
+        <span id="theme-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6a6 6 0 1 0 6 6"/><circle cx="12" cy="12" r="2"/></svg></span>
+        <span id="theme-label">Зелёная</span>
+      </button>
+      <div class="lang-switcher">
+        <button class="lang-btn active">RU</button>
+        <button class="lang-btn">KG</button>
+        <button class="lang-btn">EN</button>
+      </div>
+      <a href="index.html#lead" class="btn btn-primary" style="padding:10px 22px;font-size:.88rem">Войти / Регистрация</a>
+    </div>
+    <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="nav-menu-panel" id="nav-panel">
+  <nav class="nav-panel-links">
+    <a href="index.html" class="nav-panel-link">Главная</a>
+    <a href="pricing.html" class="nav-panel-link">Тарифы</a>
+    <a href="instructions.html" class="nav-panel-link">Инструкции</a>
+    <a href="news.html" class="nav-panel-link">Новости</a>
+    <a href="contacts.html" class="nav-panel-link">Контакты</a>
+  </nav>
+  <div class="nav-panel-bottom">
+    <div class="lang-switcher">
+      <button class="lang-btn active">RU</button>
+      <button class="lang-btn">KG</button>
+      <button class="lang-btn">EN</button>
+    </div>
+    <a href="index.html#lead" class="btn btn-primary nav-panel-cta">Попробовать бесплатно</a>
+  </div>
+</div>
+
+<!-- ГЕРОЙ СТРАНИЦЫ -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Документация</span>
+    <h1>Инструкции</h1>
+    <p>Подробные руководства по работе с El-crm — от первого входа до продвинутых настроек аналитики.</p>
+  </div>
+</section>
+
+<!-- СЕТКА ИНСТРУКЦИЙ -->
+<section class="news-section section-pad">
+  <div class="container">
+    <div class="news-grid">
+
+      <!-- Карточка 1 -->
+      <article class="news-card anim d1">
+        <div class="news-thumb">
+          <div class="news-thumb-inner">
+            <div style="width:64px;height:64px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="news-body">
+          <div class="news-meta"><span class="news-tag">Начало работы</span></div>
+          <h3 class="news-title">Быстрый старт</h3>
+          <p class="news-excerpt">Настройте El-crm с нуля за 15 минут: добавьте команду, настройте воронку и получите первые сделки.</p>
+          <a href="instruction-detail.html" class="instr-read-link">
+            Читать
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Карточка 2 -->
+      <article class="news-card anim d2">
+        <div class="news-thumb">
+          <div class="news-thumb-inner">
+            <div style="width:64px;height:64px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="news-body">
+          <div class="news-meta"><span class="news-tag">Команда</span></div>
+          <h3 class="news-title">Управление командой</h3>
+          <p class="news-excerpt">Как добавлять сотрудников, назначать роли, контролировать KPI и видеть активность каждого менеджера.</p>
+          <a href="instruction-detail.html" class="instr-read-link">
+            Читать
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Карточка 3 -->
+      <article class="news-card anim d3">
+        <div class="news-thumb">
+          <div class="news-thumb-inner">
+            <div style="width:64px;height:64px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="news-body">
+          <div class="news-meta"><span class="news-tag">Аналитика</span></div>
+          <h3 class="news-title">Аналитика и отчёты</h3>
+          <p class="news-excerpt">Полный разбор дашборда: как читать графики выручки, конверсии воронки и сравнивать периоды.</p>
+          <a href="instruction-detail.html" class="instr-read-link">
+            Читать
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Карточка 4 -->
+      <article class="news-card anim d4">
+        <div class="news-thumb">
+          <div class="news-thumb-inner">
+            <div style="width:64px;height:64px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="news-body">
+          <div class="news-meta"><span class="news-tag">Интеграции</span></div>
+          <h3 class="news-title">Интеграции мессенджеров</h3>
+          <p class="news-excerpt">Подключение Telegram, WhatsApp и Instagram Direct к El-crm — все переписки в одном окне.</p>
+          <a href="instruction-detail.html" class="instr-read-link">
+            Читать
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ПОДВАЛ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Адреса</h4><ul>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Ташкент, ул. Амира Темура 107Б</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Москва, Пресненская наб. 6</li>
+      </ul></div>
+      <div class="footer-col"><h4>Контакты</h4><ul>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.83 3h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+998 71 200-00-01</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>hello@el-crm.uz</li>
+      </ul></div>
+      <div class="footer-col"><h4>Мы в соцсетях</h4>
+        <div class="socials">
+          <a href="#" class="soc-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.8 2L2 10.3l7.3 1.8L17 6.7l-6.3 6.5 7.3 4.7L21.8 2z"/></svg></a>
+          <a href="#" class="soc-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="soc-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+        <div class="pay-logos"><span class="pay-logo">VISA</span><span class="pay-logo">MC</span><span class="pay-logo">HUMO</span><span class="pay-logo">UZCARD</span></div>
+      </div>
+      <div class="footer-col"><h4>Навигация</h4><ul>
+        <li><a href="index.html">Главная</a></li><li><a href="pricing.html">Тарифы</a></li>
+        <li><a href="news.html">Новости</a></li><li><a href="contacts.html">Контакты</a></li>
+        <li><a href="instructions.html">Инструкции</a></li>
+        <li><a href="offer.html">Публичная оферта</a></li><li><a href="privacy.html">Политика</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-l"><span>© 2025 El-crm.</span><span class="sep">·</span><span>Разработано <a href="#">IT-Studio</a></span></div>
+      <div class="footer-bottom-r"><a href="offer.html">Публичная оферта</a><span class="sep">·</span><a href="privacy.html">Политика конфиденциальности</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+
+<script src="js/cubes.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
